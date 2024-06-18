@@ -13,10 +13,11 @@ public class Person {
     //@Qualifier("catBean")
     private Pet pet;
 
-    @Value("John")
+    //@Value("John")
+    @Value("${person.surname}")
     private String surname;
 
-    @Value("33")
+    @Value("${person.age}")
     private int age;
 
 //    @Autowired  //* default autowired
