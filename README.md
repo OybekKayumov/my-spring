@@ -7,4 +7,6 @@
           - init, destroy
           - annotations
               * @Component
-              * 
+              * @Autowired - в constructor по умолчанию, 
+                can be used in constructor, setter, field
+        
