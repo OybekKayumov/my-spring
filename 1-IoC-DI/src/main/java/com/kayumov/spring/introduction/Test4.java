@@ -17,11 +17,11 @@ public class Test4 {
         System.out.println(myCat);
         System.out.println(yourCat);
 
-        myCat.setName("Belka");
-        yourCat.setName("Strelka");
+//        myCat.setName("Belka");
+//        yourCat.setName("Strelka");
 //todo_                                               singleton     prototype
-        System.out.println(myCat.getName());        //* Strelka     Belka
-        System.out.println(yourCat.getName());      //* Strelka     Strelka
+//        System.out.println(myCat.getName());        //* Strelka     Belka
+//        System.out.println(yourCat.getName());      //* Strelka     Strelka
 //        //! содаётся только 1 объект.
 
         context.close();
