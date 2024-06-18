@@ -9,7 +9,7 @@
 
     <bean id="myPet"
           class="com.kayumov.spring.introduction.Cat"
-          scope="singleton">
+          scope="prototype">
     </bean>
 
 </beans>
