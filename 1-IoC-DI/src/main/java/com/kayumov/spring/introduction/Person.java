@@ -10,17 +10,18 @@ public class Person {
     private String surname;
     private int age;
 
-    @Autowired  //* default autowired
-    public Person(Pet pet) {
-        System.out.println("Person bean is created");
-        this.pet = pet;
-    }
-
-//    public Person() {
+//    @Autowired  //* default autowired
+//    public Person(Pet pet) {
 //        System.out.println("Person bean is created");
+//        this.pet = pet;
 //    }
 
+    public Person() {
+        System.out.println("Person bean is created");
+    }
+
     //* pet -> setPet
+    @Autowired
     public void setPet(Pet pet) {
         System.out.println("Class Person: set pet");
         this.pet = pet;
@@ -59,3 +60,9 @@ public class Person {
 //Meow-meow
 //Kayumov
 //50
+
+//@Autowired setter
+//Cat bean is created
+//Class Person: set pet
+//Hello, my lovely pet!
+//Meow-meow
