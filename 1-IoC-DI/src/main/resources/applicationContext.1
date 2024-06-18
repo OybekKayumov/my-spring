@@ -11,7 +11,7 @@
           class="com.kayumov.spring.introduction.Cat">
     </bean>
     <bean id="myPerson" class="com.kayumov.spring.introduction.Person">
-<!--        <constructor-arg ref="myPet" />-->
+        <constructor-arg ref="myPet" />
         <property name="pet" ref="myPet" />
     </bean>
 

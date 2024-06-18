@@ -9,11 +9,11 @@ public class Test3 {
         //* standard creation, without spring
         Pet pet = new Dog();
         Pet pet1 = new Cat();
-        Person person = new Person(pet);
-        Person person1 = new Person(pet1);
+        //Person person = new Person(pet);
+        //Person person1 = new Person(pet1);
 
-        person.callYourPet();
-        person1.callYourPet();
+        //person.callYourPet();
+        //person1.callYourPet();
 
         System.out.println();
         //* using spring
@@ -21,8 +21,8 @@ public class Test3 {
         ClassPathXmlApplicationContext context =
                 new ClassPathXmlApplicationContext("applicationContext.xml");
         Pet pet2 = context.getBean("myPet", Pet.class);
-        Person person2 = new Person(pet2);
-        person2.callYourPet();  //* Dog class
+        //Person person2 = new Person(pet2);
+        //person2.callYourPet();  //* Dog class
 
         context.close();
     }
