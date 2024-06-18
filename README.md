@@ -9,4 +9,7 @@
               * @Component
               * @Autowired - в constructor по умолчанию, 
                 can be used in constructor, setter, field
-        
+              @Qualifier - нельзя с constructor, 
+                can be used with setter and field
+              @Value - Для внедрения строк и др. значений, 
+                в этом случае нет необходимости в сеттерах  

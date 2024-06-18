@@ -2,15 +2,21 @@ package com.kayumov.spring.introduction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("personBean")
 public class Person {
 
-    @Autowired      //* field - внедрение зависимости
-    @Qualifier("dog")
+    //@Autowired      //* field - внедрение зависимости
+    //@Qualifier("dog")
+    //@Qualifier("catBean")
     private Pet pet;
+
+    @Value("John")
     private String surname;
+
+    @Value("33")
     private int age;
 
 //    @Autowired  //* default autowired
@@ -19,13 +25,16 @@ public class Person {
 //        this.pet = pet;
 //    }
 
+    //@Autowired
+    //! @Qualifier("dog") error
     public Person() {
         System.out.println("Person bean is created");
     }
 
     //* pet -> setPet
-    //@Autowired
-    public void setPet(Pet pet) {
+    @Autowired
+    //@Qualifier("dog")
+    public void setPet(@Qualifier("dog") Pet pet) {
         System.out.println("Class Person: set pet");
         this.pet = pet;
     }
