@@ -1,37 +1,30 @@
 package com.kayumov.spring.introduction;
 
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component("catBean")  //* singleton
-//@Scope("singleton")
-//@Scope("prototype")
-public class Cat implements Pet{
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
-//    private String name;
+@Component("catBean")  //* singleton
+
+public class Cat implements Pet{
 
     public Cat() {
         System.out.println("Cat bean is created");
     }
-
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
 
     @Override
     public void say() {
         System.out.println("Meow-meow");
     }
 
+    @PostConstruct
     //* init
     public void init() {
         System.out.println("Class Cat: init method");
     }
 
+    @PreDestroy
     public void destroy(){
         System.out.println("Class Cat: destroy method");
     }
