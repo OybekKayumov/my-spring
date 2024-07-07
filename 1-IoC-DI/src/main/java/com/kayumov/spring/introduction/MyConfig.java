@@ -3,9 +3,11 @@ package com.kayumov.spring.introduction;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 //@ComponentScan("spring introduction")
+@PropertySource("classpath:myApp.properties")
 public class MyConfig {
 
     @Bean   //* manually
@@ -24,3 +26,10 @@ public class MyConfig {
 //Cat bean is created
 //Person bean is created
 //Meow-meow
+
+//*
+//!!!
+//Cat bean is created
+//Person bean is created
+//John Doe
+//34
