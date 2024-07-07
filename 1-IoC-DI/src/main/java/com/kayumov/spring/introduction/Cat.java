@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component("catBean")  //* singleton
+//@Component("catBean")  //* singleton
 
 public class Cat implements Pet{
 
