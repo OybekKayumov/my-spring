@@ -1,8 +1,11 @@
 package com.kayumov.spring.introduction;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("catBean")  //* singleton
+//@Scope("singleton")
+//@Scope("prototype")
 public class Cat implements Pet{
 
 //    private String name;
