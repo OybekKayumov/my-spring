@@ -13,3 +13,5 @@
                 can be used with setter and field
               @Value - Для внедрения строк и др. значений, 
                 в этом случае нет необходимости в сеттерах  
+
+    2. Aspect Oriented Programming
