@@ -18,14 +18,14 @@ public class Cat implements Pet{
         System.out.println("Meow-meow");
     }
 
-    @PostConstruct
-    //* init
-    public void init() {
-        System.out.println("Class Cat: init method");
-    }
-
-    @PreDestroy
-    public void destroy(){
-        System.out.println("Class Cat: destroy method");
-    }
+//    @PostConstruct
+//    //* init
+//    public void init() {
+//        System.out.println("Class Cat: init method");
+//    }
+//
+//    @PreDestroy
+//    public void destroy(){
+//        System.out.println("Class Cat: destroy method");
+//    }
 }

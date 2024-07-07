@@ -2,27 +2,39 @@ package com.kayumov.spring.introduction;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("personBean")
-public class Person {
+public class PersonOld {
 
+    //@Autowired      //* field - внедрение зависимости
+    //@Qualifier("dog")
+    //@Qualifier("catBean")
     private Pet pet;
 
+    //@Value("John")
+    //@Value("${person.surname}")
     private String surname;
 
+    //@Value("${person.age}")
     private int age;
 
-    @Autowired
-    public Person(@Qualifier("catBean") Pet pet) {
+//    @Autowired  //* default autowired
+//    public Person(Pet pet) {
+//        System.out.println("Person bean is created");
+//        this.pet = pet;
+//    }
+
+    //@Autowired
+    //! @Qualifier("dog") error
+    public PersonOld() {
         System.out.println("Person bean is created");
-        this.pet = pet;
     }
 
     //* pet -> setPet
-    //@Autowired
-    public void setPet(Pet pet) {
+    @Autowired
+    //@Qualifier("dog")
+    public void setPet(@Qualifier("dog") Pet pet) {
         System.out.println("Class Person: set pet");
         this.pet = pet;
     }
@@ -50,3 +62,19 @@ public class Person {
         pet.say();
     }
 }
+
+//Cat bean is created
+//Person bean is created
+//Class Person: set pet
+//Class Person: set surname
+//Class Person: set age
+//Hello, my lovely pet!
+//Meow-meow
+//Kayumov
+//50
+
+//@Autowired setter
+//Cat bean is created
+//Class Person: set pet
+//Hello, my lovely pet!
+//Meow-meow
