@@ -9,10 +9,19 @@ public class Test1 {
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(MyConfig.class);
 
-        Library library = context.getBean("libraryBean", Library.class);
+        UniLibrary uniLibrary = context.getBean("uniLibrary",
+                UniLibrary.class);
+        uniLibrary.getBook();
+        uniLibrary.returnBook();
 
-        library.getBook();
-
+        SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
+        schoolLibrary.getBook();
         context.close();
     }
 }
+
+
+//beforeGetBookAdvice: попытка получить книгу
+//Мы берем книгу из UniLibrary
+//beforeGetBookAdvice: попытка получить книгу
+//Мы берем книгу из SchoolLibrary
