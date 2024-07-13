@@ -10,30 +10,22 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LoggingAndSecurityAspect {
 
-    @Pointcut("execution(* com.kayumov.spring.aop.UniLibrary.get*())")
-    private void allGetMethodsFromUniLibrary() {}
+    @Pointcut("execution(* com.kayumov.spring.aop.UniLibrary.*(..))")
+    private void allMethodsFromUnionLibrary() {}
 
-    @Pointcut("execution(* com.kayumov.spring.aop.UniLibrary.return*())")
-    private void allReturnMethodsFromUniLibrary() {}
+    @Pointcut("execution(public void com.kayumov.spring.aop" +
+            ".UniLibrary.returnMagazine())")
+    private void returnMagazineFromUnionLibrary() {}
 
     //* Комбинирование Pointcut
-    @Pointcut("allGetMethodsFromUniLibrary() || " +
-            "allReturnMethodsFromUniLibrary()")
-    private void allGetsAndReturnMethodsFromUniLibrary() {}
+    @Pointcut("allMethodsFromUnionLibrary() && " +
+            "!returnMagazineFromUnionLibrary()")
+    private void allMethodsExceptReturnMagazineFromUnionLibrary() {}
 
     //* advise
-    @Before("allGetMethodsFromUniLibrary()")
-    public void beforeGetLoggingAdvice() {
-        System.out.println("beforeGetLoggingAdvice: writing Log #1");
-    }
-
-    @Before("allReturnMethodsFromUniLibrary()")
-    public void beforeReturnLoggingAdvice() {
-        System.out.println("beforeReturnLoggingAdvice: writing Log #2");
-    }
-
-    @Before("allGetsAndReturnMethodsFromUniLibrary()")
-    public void beforeGetAndReturnLoggingAdvice() {
-        System.out.println("beforeGetAndReturnLoggingAdvice: writing Log #3");
+    @Before("allMethodsExceptReturnMagazineFromUnionLibrary()")
+    public void beforeAllMethodsExceptReturnMagazineAdvice() {
+        System.out.println("allMethodsExceptReturnMagazineFromUnionLibrary: " +
+                "writing Log #10");
     }
 }
