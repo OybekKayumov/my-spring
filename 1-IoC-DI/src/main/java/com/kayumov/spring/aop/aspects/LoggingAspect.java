@@ -8,7 +8,9 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LoggingAspect {
 
-    @Before("execution(public void getBook(String))")
+    @Before("execution(public void *(..))")
+    //@Before("execution(public void *(*))")
+    //@Before("execution(public void getBook(String))")
    // @Before("execution(public void get*())")  //! wildcard
     public void beforeGetBookAdvice() {
 

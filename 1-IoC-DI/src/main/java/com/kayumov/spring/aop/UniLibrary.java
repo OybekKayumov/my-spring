@@ -7,9 +7,10 @@ import org.springframework.stereotype.Component;
 public class UniLibrary extends AbstractLibrary {
 
     //@Override
-    public void getBook(String bookName) {
+   // public void getBook(String bookName) {
+    public void getBook(Book book) {
 
-        System.out.println("Мы берем книгу из UniLibrary " + bookName);
+        System.out.println("Мы берем книгу из UniLibrary: " + book.getName());
     }
 
     //public void returnBook() {
@@ -20,8 +21,8 @@ public class UniLibrary extends AbstractLibrary {
         return "return - ok";
     }
 
-    //public void getMagazine() {
-    public void getMagazine(int a) {
+    public void getMagazine() {
+    //public void getMagazine(int a) {
 
         System.out.println("Мы берем журнал из UniLibrary");
     }
