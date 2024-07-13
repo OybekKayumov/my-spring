@@ -4,12 +4,17 @@ import org.springframework.stereotype.Component;
 
 //@Component("libraryBean")
 @Component  //* unilibrary
-public class UniLibrary extends AbstractLibrary {
+public class UniLibraryOld extends AbstractLibrary {
 
-    public void getBook() {
-        System.out.println("Мы берем книгу из UniLibrary");
+    //@Override
+   // public void getBook(String bookName) {
+    public void getBook(Book book) {
+
+        System.out.println("Мы берем книгу из UniLibrary: " + book.getName());
     }
 
+    //public void returnBook() {
+    //public String returnBook() {
     protected String returnBook() {
 
         System.out.println("Мы возвращаем книгу в UniLibrary");
@@ -17,6 +22,7 @@ public class UniLibrary extends AbstractLibrary {
     }
 
     public void getMagazine() {
+    //public void getMagazine(int a) {
 
         System.out.println("Мы берем журнал из UniLibrary");
     }

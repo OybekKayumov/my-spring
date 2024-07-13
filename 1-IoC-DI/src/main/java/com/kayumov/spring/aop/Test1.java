@@ -13,23 +13,16 @@ public class Test1 {
                 UniLibrary.class);
 
         //* get bean from context
-        Book book = context.getBean("book", Book.class);
+        //Book book = context.getBean("book", Book.class);
 
 
-        uniLibrary.getBook(book);
+        uniLibrary.getBook();
+        uniLibrary.getMagazine();
+
         //uniLibrary.getBook("New Book 1");
         //uniLibrary.returnBook();
         //uniLibrary.getMagazine(18);
         //uniLibrary.getMagazine();
 
-//        SchoolLibrary schoolLibrary = context.getBean("schoolLibrary", SchoolLibrary.class);
-//        schoolLibrary.getBook();
-//        context.close();
     }
 }
-
-
-//beforeGetBookAdvice: попытка получить книгу
-//Мы берем книгу из UniLibrary
-//beforeGetBookAdvice: попытка получить книгу
-//Мы берем книгу из SchoolLibrary
