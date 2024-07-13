@@ -10,9 +10,13 @@ import org.springframework.stereotype.Component;
 @Order(30)
 public class ExceptionHandlingAspect {
 
-    @Before("com.kayumov.spring.aop.aspects.MyPointcuts.allGetMethods()")
-    public void beforeGetExceptionHandlingAdvice() {
-        System.out.println("beforeGetExceptionHandlingAdvice: exception while" +
+    @Before("com.kayumov.spring.aop.aspects.MyPointcuts.allAddMethods()")
+    public void beforeAddExceptionHandlingAdvice() {
+        System.out.println("beforeAddExceptionHandlingAdvice: exception " +
+                "while" +
                 "  getting book/magazine");
+
+        System.out.println("-".repeat(40));
+
     }
 }

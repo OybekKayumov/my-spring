@@ -13,19 +13,19 @@ public class Test1 {
                 UniLibrary.class);
 
         //* get bean from context
-        //Book book = context.getBean("book", Book.class);
+        Book book = context.getBean("book", Book.class);
 
 
         uniLibrary.getBook();
-        System.out.println("-".repeat(30));
+        //System.out.println("-".repeat(30));
         //uniLibrary.returnMagazine();
         //System.out.println("-".repeat(30));
-        //uniLibrary.addBook();
+        uniLibrary.addBook("Author 2", book);
 
         //uniLibrary.getBook("New Book 1");
         //uniLibrary.returnBook();
         //uniLibrary.getMagazine(18);
-        uniLibrary.getMagazine();
+        uniLibrary.addMagazine();
 
     }
 }
