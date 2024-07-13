@@ -17,7 +17,10 @@ public class Test1 {
 
 
         uniLibrary.getBook();
-        uniLibrary.getMagazine();
+        System.out.println("-".repeat(30));
+        uniLibrary.returnMagazine();
+        System.out.println("-".repeat(30));
+        uniLibrary.addBook();
 
         //uniLibrary.getBook("New Book 1");
         //uniLibrary.returnBook();
@@ -26,3 +29,15 @@ public class Test1 {
 
     }
 }
+
+//beforeGetAndReturnLoggingAdvice: writing Log #3
+//beforeGetLoggingAdvice: writing Log #1
+//beforeGetLoggingAdvice: попытка получить книгу/журнал
+//beforeGetSecurityAdvice: проверка прав на получение книги/журнала
+//Мы берем книгу из UniLibrary
+//------------------------------
+//beforeGetAndReturnLoggingAdvice: writing Log #3
+//beforeReturnLoggingAdvice: writing Log #2
+//Мы возвращаем журнал в UniLibrary
+//------------------------------
+//Мы добавляем книгу в UniLibrary

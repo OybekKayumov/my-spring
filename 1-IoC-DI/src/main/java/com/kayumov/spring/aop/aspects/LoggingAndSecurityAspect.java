@@ -16,6 +16,11 @@ public class LoggingAndSecurityAspect {
     @Pointcut("execution(* com.kayumov.spring.aop.UniLibrary.return*())")
     private void allReturnMethodsFromUniLibrary() {}
 
+    //* Комбинирование Pointcut
+    @Pointcut("allGetMethodsFromUniLibrary() || " +
+            "allReturnMethodsFromUniLibrary()")
+    private void allGetsAndReturnMethodsFromUniLibrary() {}
+
     //* advise
     @Before("allGetMethodsFromUniLibrary()")
     public void beforeGetLoggingAdvice() {
@@ -25,5 +30,10 @@ public class LoggingAndSecurityAspect {
     @Before("allReturnMethodsFromUniLibrary()")
     public void beforeReturnLoggingAdvice() {
         System.out.println("beforeReturnLoggingAdvice: writing Log #2");
+    }
+
+    @Before("allGetsAndReturnMethodsFromUniLibrary()")
+    public void beforeGetAndReturnLoggingAdvice() {
+        System.out.println("beforeGetAndReturnLoggingAdvice: writing Log #3");
     }
 }
