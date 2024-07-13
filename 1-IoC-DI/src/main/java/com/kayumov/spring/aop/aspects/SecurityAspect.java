@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-@Order(2)
+@Order(20)
 public class SecurityAspect {
 
     @Before("com.kayumov.spring.aop.aspects.MyPointcuts.allGetMethods()")
