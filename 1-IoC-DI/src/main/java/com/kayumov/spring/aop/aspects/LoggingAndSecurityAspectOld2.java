@@ -1,6 +1,5 @@
 package com.kayumov.spring.aop.aspects;
 
-import com.kayumov.spring.aop.UniLibrary;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -8,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-public class LoggingAndSecurityAspect {
+public class LoggingAndSecurityAspectOld2 {
 
     @Pointcut("execution(* com.kayumov.spring.aop.UniLibrary.*(..))")
     private void allMethodsFromUnionLibrary() {}

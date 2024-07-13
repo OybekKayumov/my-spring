@@ -18,14 +18,14 @@ public class Test1 {
 
         uniLibrary.getBook();
         System.out.println("-".repeat(30));
-        uniLibrary.returnMagazine();
-        System.out.println("-".repeat(30));
-        uniLibrary.addBook();
+        //uniLibrary.returnMagazine();
+        //System.out.println("-".repeat(30));
+        //uniLibrary.addBook();
 
         //uniLibrary.getBook("New Book 1");
         //uniLibrary.returnBook();
         //uniLibrary.getMagazine(18);
-        //uniLibrary.getMagazine();
+        uniLibrary.getMagazine();
 
     }
 }
