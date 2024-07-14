@@ -12,11 +12,10 @@ public class UniLibrary extends AbstractLibrary {
         System.out.println("-".repeat(40));
     }
 
-    public void returnBook() {
+    public String returnBook() {
 
         System.out.println("Мы возвращаем книгу в UniLibrary");
-        System.out.println("-".repeat(40));
-
+        return "War and Piece";
     }
 
     public void getMagazine() {
