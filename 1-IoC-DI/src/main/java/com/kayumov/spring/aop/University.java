@@ -21,6 +21,9 @@ public class University {
     }
 
     public List<Student> getStudents() {
+        System.out.println("Start working getStudents: ");
+        System.out.println(students.get(3));
+
         System.out.println("From getStudents: ");
         System.out.println(students);
         return students;
