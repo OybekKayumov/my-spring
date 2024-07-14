@@ -1,10 +1,7 @@
 package com.kayumov.spring.aop.aspects;
 
 import com.kayumov.spring.aop.Student;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -36,9 +33,17 @@ public class UniversityLoggingAspect {
 //                "logging while getting students list after getStudents method");
 //    }
 
-    @AfterThrowing(pointcut = "execution(* getStudents())", throwing =
-            "exception")
-    public void afterThrowingGetStLogAdvice(Throwable exception) {
-        System.out.println("afterThrowingGetStLogAdvice: throwing exception " + exception);
+    //*
+//    @AfterThrowing(pointcut = "execution(* getStudents())", throwing =
+//            "exception")
+//    public void afterThrowingGetStLogAdvice(Throwable exception) {
+//        System.out.println("afterThrowingGetStLogAdvice: throwing exception " + exception);
+//    }
+
+    @After("execution(* getStudents())")
+    public void afterGetStLogAdvice() {
+        System.out.println("afterGetStLogAdvice: normal finish of method or " +
+                "throw exception");
     }
+
 }
