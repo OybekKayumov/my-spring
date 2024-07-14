@@ -36,8 +36,9 @@ public class UniversityLoggingAspect {
 //                "logging while getting students list after getStudents method");
 //    }
 
-    @AfterThrowing("execution(* getStudents())")
-    public void afterThrowingGetStLogAdvice() {
-        System.out.println("afterThrowingGetStLogAdvice: throwing exception ");
+    @AfterThrowing(pointcut = "execution(* getStudents())", throwing =
+            "exception")
+    public void afterThrowingGetStLogAdvice(Throwable exception) {
+        System.out.println("afterThrowingGetStLogAdvice: throwing exception " + exception);
     }
 }
