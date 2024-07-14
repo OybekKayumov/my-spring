@@ -36,7 +36,7 @@ public class LoggingAspect {
             }
         }
 
-        System.out.println("logging: try ti get book/magazine");
+        System.out.println("logging: try to get book/magazine");
         System.out.println("-".repeat(40));
     }
 }
