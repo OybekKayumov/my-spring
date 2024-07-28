@@ -20,8 +20,12 @@ public class Test5 {
             session.beginTransaction();
 
             //* delete data from db
-            Employee employee = session.get(Employee.class, 1);  //* id = 1
-            session.delete(employee);
+            //Employee employee = session.get(Employee.class, 1);  //* id = 1
+            //session.delete(employee);
+
+            session.createQuery(
+               "delete Employee where name = 'Alex'")
+                    .executeUpdate();
 
             //* close transaction
             session.getTransaction().commit();
