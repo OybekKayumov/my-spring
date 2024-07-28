@@ -19,12 +19,15 @@ public class Test1 {
 
             //* create an object to save in db
             Employee employee = new Employee(
-                    "John", "Doe", "IT", 500);
+                    "Alex", "Tom", "IT", 600);
 
             //* open transaction
             session.beginTransaction();
             session.save(employee);             //* insert obj to db
             session.getTransaction().commit();
+
+            System.out.println("Done!");
+            System.out.println(employee);
         } finally {
             factory.close();
         }

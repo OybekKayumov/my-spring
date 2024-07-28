@@ -15,3 +15,6 @@
                 в этом случае нет необходимости в сеттерах  
 
     2. Aspect Oriented Programming
+    
+    3. hibernate - base
+          - CRUD operations
