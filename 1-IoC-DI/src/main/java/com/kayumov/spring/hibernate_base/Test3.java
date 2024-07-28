@@ -30,7 +30,8 @@ public class Test3 {
             //* get objects from db using condition
             // here 'name' is from Employee class, not from db
             List<Employee> employees =
-                    session.createQuery("from Employee where name = 'Alex'")
+                    session.createQuery("from Employee where name = 'Alex' " +
+                                    "AND salary > 650")
                     .getResultList();
             for (Employee employee : employees) {
                 System.out.println(employee);
