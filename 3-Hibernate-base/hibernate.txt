@@ -1,0 +1,1 @@
+@Entity from import jakarta.persistence.Entity;
