@@ -20,11 +20,13 @@ public class Test2 {
              session = factory.getCurrentSession();
 
             Employee employee = new Employee(
-                    "Mike", "Sid", "HR", 850
+                    "Niko", "Ive", "HR", 850
             );
             Detail detail = new Detail(
-                    "London", "987321456", "mike@mail.com"
+                    "NY", "456123789", "niko@mail.com"
             );
+
+            employee.setEmpDetail(detail);
             detail.setEmployee(employee);
 
             //* open transaction
