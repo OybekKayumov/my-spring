@@ -1,11 +1,14 @@
 package com.kayumov.spring.hibernate_one_to_many_bi;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "departments")
 @NoArgsConstructor
@@ -28,4 +31,13 @@ public class Department {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "department")
     private List<Employee> employees;
+
+    public void addEmpToDep(Employee employee) {
+        if (employees == null) {
+            employees = new ArrayList<>();
+        }
+
+        employees.add(employee);
+        employee.setDepartment(this);       //!
+    }
 }

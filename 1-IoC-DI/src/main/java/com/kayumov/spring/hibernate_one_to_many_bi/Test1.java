@@ -13,50 +13,16 @@ public class Test1 {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
-                .addAnnotatedClass(Detail.class)
+                .addAnnotatedClass(Department.class)
                 .buildSessionFactory();
         Session session = null;
 
         try {
-//            Session session = factory.getCurrentSession();
-//
-//            Employee employee = new Employee(
-//              "John", "Doe", "IT", 500
-//            );
-//            Detail detail = new Detail(
-//                "BigCity", "123456789", "john@mail.com"
-//            );
-//
-//            employee.setEmpDetail(detail);
-//
-//            //* open transaction
-//            session.beginTransaction();
-//
-//            session.save(employee);
-//
-//            session.getTransaction().commit();
-//
-//            System.out.println("Done!");
-
              session = factory.getCurrentSession();
-
-//            Employee employee = new Employee(
-//                    "Cindy", "Mac", "SALES", 700
-//            );
-//            Detail detail = new Detail(
-//                    "SmallCity", "987654321", "cindy@mail.com"
-//            );
-            //employee.setEmpDetail(detail);
 
             //* open transaction
             session.beginTransaction();
 
-            //* get user by id
-            Employee employee = session.get(Employee.class, 1);
-            //System.out.println(employee.getEmpDetail());
-            //session.save(employee);
-
-            session.delete(employee);
 
             session.getTransaction().commit();
             System.out.println("Done!");
