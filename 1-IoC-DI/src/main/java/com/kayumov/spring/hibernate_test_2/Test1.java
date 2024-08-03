@@ -16,13 +16,33 @@ public class Test1 {
                 .buildSessionFactory();
 
         try {
+//            Session session = factory.getCurrentSession();
+//
+//            Employee employee = new Employee(
+//              "John", "Doe", "IT", 500
+//            );
+//            Detail detail = new Detail(
+//                "BigCity", "123456789", "john@mail.com"
+//            );
+//
+//            employee.setEmpDetail(detail);
+//
+//            //* open transaction
+//            session.beginTransaction();
+//
+//            session.save(employee);
+//
+//            session.getTransaction().commit();
+//
+//            System.out.println("Done!");
+
             Session session = factory.getCurrentSession();
 
             Employee employee = new Employee(
-              "John", "Doe", "IT", 500
+                    "Cindy", "Mac", "SALES", 700
             );
             Detail detail = new Detail(
-                "BigCity", "123456789", "john@mail.com"
+                    "SmallCity", "987654321", "cindy@mail.com"
             );
 
             employee.setEmpDetail(detail);
