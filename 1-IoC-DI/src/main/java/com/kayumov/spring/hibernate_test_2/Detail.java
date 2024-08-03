@@ -1,15 +1,12 @@
 package com.kayumov.spring.hibernate_test_2;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "details")
 public class Detail {
@@ -28,7 +25,11 @@ public class Detail {
     @Column(name = "email")
     private String email;
 
-
+    public Detail(String city, String phoneNumber, String email) {
+        this.city = city;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
 
     @Override
     public String toString() {

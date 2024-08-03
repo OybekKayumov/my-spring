@@ -12,13 +12,25 @@ public class Test1 {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
+                .addAnnotatedClass(Detail.class)
                 .buildSessionFactory();
 
         try {
             Session session = factory.getCurrentSession();
 
+            Employee employee = new Employee(
+              "John", "Doe", "IT", 500
+            );
+            Detail detail = new Detail(
+                "BigCity", "123456789", "john@mail.com"
+            );
+
+            employee.setEmpDetail(detail);
+
             //* open transaction
             session.beginTransaction();
+
+            session.save(employee);
 
             session.getTransaction().commit();
 
