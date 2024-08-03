@@ -1,7 +1,11 @@
-package com.kayumov.spring.hibernate_test_2;
+package com.kayumov.spring.hibernate_one_to_many_bi;
 
+import com.kayumov.spring.hibernate_one_to_one.Detail;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 
 @Getter
@@ -23,20 +27,12 @@ public class Employee {
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "department")
-    private String department;
-
     @Column(name = "salary")
     private int salary;
 
-    @OneToOne(cascade = CascadeType.ALL)    //! delete also from "details"
-    @JoinColumn(name = "details_id")  //! it goes to "table details, column id"
-    private Detail empDetail;
-
-    public Employee(String name, String surname, String department, int salary) {
+    public Employee(String name, String surname, int salary) {
         this.name = name;
         this.surname = surname;
-        this.department = department;
         this.salary = salary;
     }
 }

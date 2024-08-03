@@ -1,4 +1,4 @@
-package com.kayumov.spring.hibernate_test_2;
+package com.kayumov.spring.hibernate_one_to_one;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

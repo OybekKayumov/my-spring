@@ -1,4 +1,4 @@
-package com.kayumov.spring.hibernate_test_2;
+package com.kayumov.spring.hibernate_one_to_one;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -32,7 +32,10 @@ public class Test2 {
             session.beginTransaction();
 
             Detail detail = session.get(Detail.class, 4);
-            //System.out.println(detail.getEmployee());
+
+            //! remove connection before delete user
+            detail.getEmployee().setEmpDetail(null);
+
             session.delete(detail);
 
 
