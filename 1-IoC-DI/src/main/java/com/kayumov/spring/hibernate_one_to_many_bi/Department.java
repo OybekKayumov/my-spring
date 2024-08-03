@@ -55,7 +55,7 @@ public class Department {
                 ", departmentName='" + departmentName + '\'' +
                 ", maxSalary=" + maxSalary +
                 ", minSalary=" + minSalary +
-                ", employees=" + employees +
+                //", employees=" + employees +
                 '}';
     }
 }
