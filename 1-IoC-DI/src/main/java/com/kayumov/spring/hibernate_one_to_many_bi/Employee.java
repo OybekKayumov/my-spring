@@ -30,6 +30,11 @@ public class Employee {
     @Column(name = "salary")
     private int salary;
 
+    //! many workers can work in one department, foreign key always in many
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "department_id")
+    private Department department;
+
     public Employee(String name, String surname, int salary) {
         this.name = name;
         this.surname = surname;

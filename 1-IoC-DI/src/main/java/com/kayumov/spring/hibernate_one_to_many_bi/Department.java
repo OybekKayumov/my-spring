@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "departments")
 @NoArgsConstructor
@@ -23,4 +25,7 @@ public class Department {
 
     @Column(name = "min_salary")
     private int minSalary;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "department")
+    private List<Employee> employees;
 }
