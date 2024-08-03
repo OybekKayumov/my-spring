@@ -31,8 +31,10 @@ public class Test2 {
             //* open transaction
             session.beginTransaction();
 
-            Detail detail = session.get(Detail.class, 6);
-            System.out.println(detail.getEmployee());
+            Detail detail = session.get(Detail.class, 4);
+            //System.out.println(detail.getEmployee());
+            session.delete(detail);
+
 
             //session.save(detail);
 

@@ -25,8 +25,9 @@ public class Detail {
     @Column(name = "email")
     private String email;
 
+    //* already have connection in Employee
     @OneToOne(mappedBy = "empDetail",
-              cascade = CascadeType.ALL)  //* already have connection in Employee
+              cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
     private Employee employee;
 
     public Detail(String city, String phoneNumber, String email) {
