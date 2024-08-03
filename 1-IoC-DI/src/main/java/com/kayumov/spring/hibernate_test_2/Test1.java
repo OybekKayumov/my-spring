@@ -51,10 +51,11 @@ public class Test1 {
             session.beginTransaction();
 
             //* get user by id
-            Employee employee = session.get(Employee.class, 20);
-            System.out.println(employee.getEmpDetail());
-
+            Employee employee = session.get(Employee.class, 1);
+            //System.out.println(employee.getEmpDetail());
             //session.save(employee);
+
+            session.delete(employee);
 
             session.getTransaction().commit();
             System.out.println("Done!");
