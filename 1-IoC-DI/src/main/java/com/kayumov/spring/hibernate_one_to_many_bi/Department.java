@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@ToString
+//@ToString
 @Entity
 @Table(name = "departments")
 @NoArgsConstructor
@@ -29,8 +29,15 @@ public class Department {
     @Column(name = "min_salary")
     private int minSalary;
 
+    @Getter
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "department")
     private List<Employee> employees;
+
+    public Department(String departmentName, int maxSalary, int minSalary) {
+        this.departmentName = departmentName;
+        this.maxSalary = maxSalary;
+        this.minSalary = minSalary;
+    }
 
     public void addEmpToDep(Employee employee) {
         if (employees == null) {
@@ -39,5 +46,16 @@ public class Department {
 
         employees.add(employee);
         employee.setDepartment(this);       //!
+    }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "id=" + id +
+                ", departmentName='" + departmentName + '\'' +
+                ", maxSalary=" + maxSalary +
+                ", minSalary=" + minSalary +
+                ", employees=" + employees +
+                '}';
     }
 }
