@@ -31,7 +31,8 @@ public class Employee {
     private int salary;
 
     //! many workers can work in one department, foreign key always in many
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH,
+            CascadeType.REFRESH, CascadeType.MERGE})
     @JoinColumn(name = "department_id")
     private Department department;
 
