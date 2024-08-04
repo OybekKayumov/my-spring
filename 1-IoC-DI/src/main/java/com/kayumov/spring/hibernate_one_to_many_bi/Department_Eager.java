@@ -1,7 +1,10 @@
 package com.kayumov.spring.hibernate_one_to_many_bi;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +16,7 @@ import java.util.List;
 @Table(name = "departments")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Department {
+public class Department_Eager {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,10 +35,10 @@ public class Department {
     @Getter
     @OneToMany(cascade = CascadeType.ALL,
             mappedBy = "department",
-            fetch = FetchType.LAZY)  //* one more select
+            fetch = FetchType.EAGER)
     private List<Employee> employees;
 
-    public Department(String departmentName, int maxSalary, int minSalary) {
+    public Department_Eager(String departmentName, int maxSalary, int minSalary) {
         this.departmentName = departmentName;
         this.maxSalary = maxSalary;
         this.minSalary = minSalary;
@@ -47,7 +50,7 @@ public class Department {
         }
 
         employees.add(employee);
-        employee.setDepartment(this);       //!
+       // employee.setDepartment(this);       //!
     }
 
     @Override
