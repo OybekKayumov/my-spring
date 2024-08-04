@@ -18,3 +18,6 @@
     
     3. hibernate - base
           - CRUD operations
+          - one to one, bi-directional, uni-directional
+          - one to many, bi-directional, uni-directional                   
+          - many to many
