@@ -29,10 +29,13 @@ public class Test2 {
             System.out.println("Show Department");
             System.out.println(department);
 
+            department.getEmployees().get(0);  //* no error
+
+            session.getTransaction().commit();
+
             System.out.println("Show Employees of the Department");
             System.out.println(department.getEmployees());
 
-            session.getTransaction().commit();
             System.out.println("Done!");
         } finally {
             session.close();
