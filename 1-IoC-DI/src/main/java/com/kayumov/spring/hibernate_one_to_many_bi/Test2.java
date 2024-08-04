@@ -29,6 +29,7 @@ public class Test2 {
             System.out.println("Show Department");
             System.out.println(department);
 
+            System.out.println("Get Employees");
             department.getEmployees().get(0);  //* no error
 
             session.getTransaction().commit();
