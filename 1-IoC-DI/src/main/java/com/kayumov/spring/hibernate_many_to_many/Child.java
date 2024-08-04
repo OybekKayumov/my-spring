@@ -36,6 +36,11 @@ public class Child {
     )
     private List<Section> sections;
 
+    public Child(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
     @Override
     public String toString() {
         return "Child{" +

@@ -33,6 +33,10 @@ public class Section {
     )
     private List<Child> children;
 
+    public Section(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Section{" +
