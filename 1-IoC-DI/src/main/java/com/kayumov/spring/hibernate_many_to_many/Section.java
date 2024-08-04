@@ -46,7 +46,7 @@ public class Section {
     }
 
     public void addChildToSection(Child child) {
-        if (child == null) {
+        if (children == null) {
             children = new ArrayList<>();
         }
         children.add(child);
