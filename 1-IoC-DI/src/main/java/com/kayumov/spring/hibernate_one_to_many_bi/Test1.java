@@ -18,18 +18,20 @@ public class Test1 {
         Session session = null;
 
         try {
-             session = factory.getCurrentSession();
+            session = factory.getCurrentSession();
 
             //* open transaction
             session.beginTransaction();
 
-             Department department = new Department("IT", 200, 1200);
+            Department department = new Department("SALES", 800, 1500);
 
-             Employee employee1 = new Employee("John", "Doe", 800);
-             Employee employee2 = new Employee("Jane", "Doe", 1000);
+            Employee employee1 = new Employee("John", "Doe", 800);
+            Employee employee2 = new Employee("Jane", "Doe", 1500);
+            Employee employee3 = new Employee("Anton", "Sidorov", 1200);
 
-             department.addEmpToDep(employee1);
-             department.addEmpToDep(employee2);
+            department.addEmpToDep(employee1);
+            department.addEmpToDep(employee2);
+            department.addEmpToDep(employee3);
 
             session.save(department);
 
