@@ -22,10 +22,7 @@ public class Test4 {
             //* open transaction
             session.beginTransaction();
 
-            Department department = session.get(Department.class, 2);
-            //Employee employee = session.get(Employee.class, 3);
-            //System.out.println(employee);
-            //session.delete(employee);
+            Department department = session.get(Department.class, 3);
 
             session.delete(department);
 
