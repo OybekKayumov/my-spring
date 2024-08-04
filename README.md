@@ -16,7 +16,8 @@
 
     2. Aspect Oriented Programming
     
-    3. hibernate - base
+    3. hibernate 
+          - base
           - CRUD operations
           - one to one, bi-directional, uni-directional
           - one to many, bi-directional, uni-directional                   
