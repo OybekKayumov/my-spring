@@ -31,7 +31,8 @@ public class Department {
 
     @Getter
     @OneToMany(cascade = CascadeType.ALL,
-            mappedBy = "department")
+            mappedBy = "department",
+            fetch = FetchType.EAGER)
     private List<Employee> employees;
 
     public Department(String departmentName, int maxSalary, int minSalary) {

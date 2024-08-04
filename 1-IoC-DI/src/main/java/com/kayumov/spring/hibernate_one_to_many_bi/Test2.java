@@ -22,8 +22,14 @@ public class Test2 {
             //* open transaction
             session.beginTransaction();
 
-            Department department = session.get(Department.class, 1);
+            System.out.println("Get Department");
+
+            Department department = session.get(Department.class, 4);
+
+            System.out.println("Show Department");
             System.out.println(department);
+
+            System.out.println("Show Employees of the Department");
             System.out.println(department.getEmployees());
 
             session.getTransaction().commit();
