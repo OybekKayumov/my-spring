@@ -22,3 +22,8 @@
           - one to one, bi-directional, uni-directional
           - one to many, bi-directional, uni-directional                   
           - many to many
+
+    4. spring mvc
+
+    5. spring hibernate mvc aop
+    
